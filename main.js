@@ -666,16 +666,16 @@ for (let i = 1; i < infectedInFrance.length; i++) {
 }
 for (let i = 1; i < infected.length; i++) {
   if (infected[i] > 0) {
-    console.log(`Количество заболевших за ${i} день: ${infected[i]}`);
+    console.log(`${i} День:\n Количество заболевших за ${i} день: ${infected[i]}`);
     let expect = infected[i] + error;
     console.log(`Математическое ожидание количества заболевших: ${expect} `);
     console.log(
-      `Математическое отклонение за ${i} день: ${expect - infected[i]}`
+      `Математическое отклонение за ${i} день: ${expect - infected[i]}\n\n`
     );
   }
   if (infected[i] <= 0) {
     console.log(
-      `Количество людей, которые вылечились за ${i} день: ${-infected[i]}`
+      `${i} День:\n Количество людей, которые вылечились за ${i} день: ${-infected[i]}`
     );
     let expect = infected[i] + error;
     console.log(
@@ -683,8 +683,8 @@ for (let i = 1; i < infected.length; i++) {
     );
     console.log(
       `Математическое отклонение вылечившихся за ${i} день: ${
-        expect - -infected[i]
-      }`
+        -infected[i] - (-expect)
+      }\n\n`
     );
   }
 }
